@@ -21,16 +21,18 @@ public class MyTimeDialog {
         this.onMyTimeChangeListener = onMyTimeChangeListener;
     }
 
-    public void showTimeDialog (final EditText text) {
+    public void showTimeDialog () {
         TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                if (hourOfDay >= 12) {
+                /*if (hourOfDay >= 12) {
                     amPm = "PM";
                 } else {
                     amPm = "AM";
                 }
-                text.setText(String.format("%02d:%02d ", hourOfDay, minute) + amPm);
+                text.setText(String.format("%02d:%02d ", hourOfDay, minute) + amPm);*/
+                calendar.set(calendar.HOUR_OF_DAY, hourOfDay);
+                calendar.set(calendar.MINUTE, minute);
                 if (onMyTimeChangeListener != null) onMyTimeChangeListener.timeUpdate(calendar);
             }
         };

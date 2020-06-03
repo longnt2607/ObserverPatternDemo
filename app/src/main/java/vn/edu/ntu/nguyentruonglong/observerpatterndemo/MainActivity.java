@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements MyDateDialog.OnMy
             @Override
             public void onClick(View v) {
                 MyTimeDialog myTimeDialog = new MyTimeDialog(MainActivity.this, Calendar.getInstance(), MainActivity.this);
-                myTimeDialog.showTimeDialog(timeCongTac);
+                myTimeDialog.showTimeDialog();
             }
         });
     }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements MyDateDialog.OnMy
 
     @Override
     public void timeUpdate(Calendar newTime) {
-        /*int hourOfDay = newTime.get(newTime.HOUR_OF_DAY);
+        int hourOfDay = newTime.get(newTime.HOUR_OF_DAY);
         int minute = newTime.get(newTime.MINUTE);
         String amPm;
         if (hourOfDay >= 12) {
@@ -85,6 +85,6 @@ public class MainActivity extends AppCompatActivity implements MyDateDialog.OnMy
         } else {
             amPm = "AM";
         }
-        timeCongTac.setText(String.format("%02d:%02d", hourOfDay, minute) + amPm);*/
+        timeCongTac.setText(String.format("%02d:%02d", hourOfDay, minute) + amPm);
     }
 }
